@@ -44,6 +44,26 @@ void insertAtHead(node **headptr,int number){
 	*headptr = newNode;
 }
 
+// To insert a node at nth postion
+void insertAtNthPosition(node **headptr,int number, int position){
+	node *newNode = new node();
+	newNode->data = number;
+	newNode->next = NULL;
+	node *prevNode = *headptr;
+	for(int i=0;i<position-1;i++){
+		cout<<"Position is"<<i<<endl;
+		prevNode = prevNode->next;
+	}
+	if(prevNode == NULL){
+		return;
+	}
+	else{
+		newNode->next = prevNode->next;
+		prevNode->next = newNode;
+		return;
+	}
+}
+
 int main()
 {
 	node * head;
@@ -57,12 +77,14 @@ int main()
 	third->data = 3;
 	third->next = NULL;
 	//Expected output : 1 2 3
-	displayLinkedList(head); 
+	// displayLinkedList(head); 
 	insertAtEnd(&head,4);
 	// Expected output : 1 2 3 4
-	displayLinkedList(head); 
+	// displayLinkedList(head); 
 	insertAtHead(&head,0);
 	// Expected output : 0 1 2 3 4
+	// displayLinkedList(head);
+	insertAtNthPosition(&head,101,3);
 	displayLinkedList(head);
     return 0;
 
