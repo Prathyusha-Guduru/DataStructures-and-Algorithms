@@ -77,14 +77,15 @@ int main()
 	third->data = 3;
 	third->next = NULL;
 	//Expected output : 1 2 3
-	// displayLinkedList(head); 
+	displayLinkedList(head); 
 	insertAtEnd(&head,4);
 	// Expected output : 1 2 3 4
-	// displayLinkedList(head); 
+	displayLinkedList(head); 
 	insertAtHead(&head,0);
 	// Expected output : 0 1 2 3 4
-	// displayLinkedList(head);
+	displayLinkedList(head);
 	insertAtNthPosition(&head,101,3);
+	// Expected output : 0 1 2 101 3 4
 	displayLinkedList(head);
     return 0;
 
