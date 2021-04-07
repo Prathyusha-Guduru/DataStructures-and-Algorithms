@@ -36,6 +36,14 @@ void insertAtEnd(node **headptr,int number){
 
 }
 
+// To insert a node at the head of the list
+void insertAtHead(node **headptr,int number){
+	node * newNode = new node();
+	newNode->data = number;
+	newNode->next = *headptr;
+	*headptr = newNode;
+}
+
 int main()
 {
 	node * head;
@@ -48,8 +56,13 @@ int main()
 	second->next = third;
 	third->data = 3;
 	third->next = NULL;
-	displayLinkedList(head);
+	//Expected output : 1 2 3
+	displayLinkedList(head); 
 	insertAtEnd(&head,4);
+	// Expected output : 1 2 3 4
+	displayLinkedList(head); 
+	insertAtHead(&head,0);
+	// Expected output : 0 1 2 3 4
 	displayLinkedList(head);
     return 0;
 
