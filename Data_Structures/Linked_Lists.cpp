@@ -51,7 +51,6 @@ void insertAtNthPosition(node **headptr,int number, int position){
 	newNode->next = NULL;
 	node *prevNode = *headptr;
 	for(int i=0;i<position-1;i++){
-		cout<<"Position is"<<i<<endl;
 		prevNode = prevNode->next;
 	}
 	if(prevNode == NULL){
@@ -64,6 +63,26 @@ void insertAtNthPosition(node **headptr,int number, int position){
 	}
 }
 
+// To delete a node from nth position
+void deleteAtNthPosition(node **headptr,int position){
+	node * prevNode = *headptr;
+	for(int i=0;i<position-1;i++){
+		prevNode = prevNode->next;
+	}
+	if(prevNode == *headptr){
+		*headptr = prevNode->next;
+		free(prevNode);
+		return;
+	}
+	else{
+		node *toBeDeleted = prevNode->next;
+		prevNode->next = toBeDeleted->next;
+		free(toBeDeleted);
+		return;
+	}
+
+
+}
 int main()
 {
 	node * head;
@@ -86,6 +105,8 @@ int main()
 	displayLinkedList(head);
 	insertAtNthPosition(&head,101,3);
 	// Expected output : 0 1 2 101 3 4
+	displayLinkedList(head);
+	deleteAtNthPosition(&head,3);
 	displayLinkedList(head);
     return 0;
 
