@@ -83,6 +83,23 @@ void deleteAtNthPosition(node **headptr,int position){
 
 
 }
+
+//Reverse a linked list iteratively
+void reverseTheListIteratively(node **headptr){
+	node * prevNode,*nextNode,*currentNode;
+	currentNode = *headptr;
+	prevNode = NULL;
+	while(currentNode != NULL){
+		nextNode = currentNode->next;
+		currentNode ->next = prevNode;
+		prevNode = currentNode;
+		currentNode = nextNode;
+	}
+	*headptr = prevNode;
+
+}
+
+
 int main()
 {
 	node * head;
@@ -107,6 +124,11 @@ int main()
 	// Expected output : 0 1 2 101 3 4
 	displayLinkedList(head);
 	deleteAtNthPosition(&head,3);
+	// Expected output : 0 1 2 3 4
+	displayLinkedList(head);
+	reverseTheListIteratively(&head);
+	// Expected output : 4 3 2 1 0
+	cout<<"Reverse order : ";
 	displayLinkedList(head);
     return 0;
 
