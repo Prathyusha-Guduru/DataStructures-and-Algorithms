@@ -95,8 +95,13 @@ void reverseTheListIteratively(node **headptr){
 		prevNode = currentNode;
 		currentNode = nextNode;
 	}
-	*headptr = prevNode;
+	*headptr = prevNode
 
+}
+
+//Reverse the list recursively
+void reverseTheListRecursively(node **headptr){
+	
 }
 
 
