@@ -1,7 +1,8 @@
 {
 	"files.associations": {
 		"*.h5": "python",
-		"new": "cpp"
+		"new": "cpp",
+		"ostream": "cpp"
 	},
 	"liveServer.settings.port": 5501
 }
