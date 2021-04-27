@@ -31,11 +31,11 @@ void reverseArray(int arr[],int n){
 }
 
 int main(){
-	int arr[5] = {1,2,3,4,5};
+	int arr[6] = {1,2,3,4,5,6};
 	cout<<"Elements of the array before reversal  : "<<endl;
-	printArray(arr,5);
+	printArray(arr,6);
 	cout<<"After reversal "<<endl;
-	reverseArray(arr,5);
-	printArray(arr,5);
+	reverseArray(arr,6);
+	printArray(arr,6);
 	return 0;
 }
